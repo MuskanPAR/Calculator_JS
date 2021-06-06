@@ -1,0 +1,169 @@
+<html>
+<head>
+<title>
+calculator
+</title>
+<style>
+#box
+{
+background-color:lightgray;
+height:520px;
+width:549px;
+margin-top:55px;
+margin-left:406px;
+border-radius:8px;
+border: solid azure;
+padding:0px;
+
+}
+#calculator
+{
+margin:10px;
+background-color:black;
+width:528px;
+margin:8px;
+height:40px;
+
+}
+.textview
+{
+background-color:#FFFBDC;
+height:92px;
+margin-top:9px;
+width:532px;
+font-size:50px;
+margin-left:8px;
+margin-bottom:1px;
+}
+.one
+{
+margin-top:0px;
+padding:2px;
+margin-left:7px;
+
+}
+.blockone
+{
+height:61px;
+width:130px;
+font-size:30px;
+}
+.blockone:hover
+{
+background-color:yellow;
+}
+.zero
+{
+height:61px;
+width:265px;
+font-size:30px;
+}
+.zero:hover
+{
+background-color:yellow;
+}
+.blockone_colored
+{
+height:61px;
+width:130px;
+font-size:30px;
+background-color:cyan;
+}
+.blockone_colored:hover
+{
+background-color:yellow;
+}
+#AC
+{
+background-color:darkmagenta;
+color:white;
+}
+#AC:hover
+{
+background-color:yellow;
+}
+#del
+{
+background-color:coral;
+}
+#del:hover
+{
+background-color:yellow;
+}
+#equals
+{
+background-color:coral;
+}
+#equals:hover
+{
+background-color:yellow;
+}
+</style>
+<script>
+function insert(x)
+{
+document.form.textview.value=document.form.textview.value+x;
+}
+function equal()
+{
+var exp=document.form.textview.value;
+  if(exp)
+   {
+    document.form.textview.value=eval(exp);
+   }
+
+}
+function clean()
+{
+document.form.textview.value="";
+}
+function back()
+{
+var exp=document.form.textview.value;
+document.form.textview.value=exp.substring(0,exp.length-1);
+}
+
+</script>
+</head>
+<body>
+<div id="box">
+  <div id="calculator">
+    <h1 style="color:white; text-align:center;">CALCULATOR</h1>
+  </div>
+  <form name="form">
+     <input class="textview" name="textview">
+  </form>	 
+  <div class="one">
+  <input type="button" value="AC"  id="AC" class="blockone" onclick="clean()"> 
+  <input type="button" value="Del"  id="del" class="blockone" onclick="back()">
+  <input type="button" value="="  id="equals" class="blockone" onclick="equal()">
+  <input type="button" value="/" class="blockone_colored" onclick="insert('/')">
+  </div>
+  <div class="one">
+  <input type="button" value="7"  class="blockone" onclick="insert(7)">
+  <input type="button" value="8" class="blockone"onclick="insert(8)">
+  <input type="button" value="9" class="blockone"onclick="insert(9)">
+  <input type="button" value="*" class="blockone_colored"onclick="insert('*')">
+  </div>
+  <div class="one">
+  <input type="button" value="4"  class="blockone"onclick="insert(4)">
+  <input type="button" value="5" class="blockone"onclick="insert(5)">
+  <input type="button" value="6" class="blockone" onclick="insert(6)">
+  <input type="button" value="-" class="blockone_colored" onclick="insert('-')">
+  </div>
+  <div class="one">
+  <input type="button" value="1"  class="blockone" onclick="insert(1)">
+  <input type="button" value="2" class="blockone" onclick="insert(2)">
+  <input type="button" value="3" class="blockone" onclick="insert(3)">
+  <input type="button" value="+" class="blockone_colored" onclick="insert('+')">
+  </div>
+  <div class="one">
+  <input type="button" value="0"  class="zero" onclick="insert(0)">
+  <input type="button" value="." class="blockone" onclick="insert('.')">
+  <input type="button" value="^" class="blockone_colored" onclick="insert('^')">
+  </div>
+
+
+</div>
+</body>
+</html>
